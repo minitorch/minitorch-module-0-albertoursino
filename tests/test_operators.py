@@ -107,8 +107,11 @@ def test_sigmoid(a: float) -> None:
     * It crosses 0 at 0.5
     * It is  strictly increasing.
     """
-    # TODO: Implement for Task 0.2.
-    raise NotImplementedError("Need to implement for Task 0.2")
+    tolerance = 1e-10  # Small tolerance for floating-point comparison
+    assert 0.0 <= sigmoid(a) <= 1.0
+    assert abs((1.0 - sigmoid(a)) - sigmoid(-a)) < tolerance
+    assert sigmoid(0) == 0.5
+    assert sigmoid(1) < sigmoid(2)
 
 
 @pytest.mark.task0_2
