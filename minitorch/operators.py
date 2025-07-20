@@ -44,7 +44,7 @@ def id(input: object) -> object:
 
 def add(x: float, y: float) -> float:
     """Adds two numbers."""
-    return x * y
+    return x + y
 
 
 def neg(x: float) -> float:
@@ -67,8 +67,9 @@ def max(x: float, y: float) -> float:
     return x if x > y else y
 
 
-def is_close(x: float, y: float, value: float) -> bool:
-    """Check if `x` and `y` are close in `value`."""
+def is_close(x: float, y: float) -> bool:
+    """Check if `x` and `y` are close enough."""
+    value = 1e-2
     return abs(x - y) < value
 
 
@@ -96,7 +97,7 @@ def exp(x: float) -> float:
 
 def inv(x: float) -> float:
     """Calculates the reciprocal of `x`."""
-    return 1 / math.exp(x)
+    return 1 / x
 
 
 def log_back(x: float, n: float) -> float:
@@ -112,9 +113,6 @@ def inv_back(x: float, n: float) -> float:
 def relu_back(x: float, n: float) -> float:
     """Computes the derivative of ReLU times `n`."""
     return n if x > 0 else 0
-
-
-# TODO: Implement for Task 0.1.
 
 
 # ## Task 0.3
